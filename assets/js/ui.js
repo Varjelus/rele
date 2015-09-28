@@ -283,4 +283,14 @@ rele.on('shouldHighlight', shouldHighlight)
 
 $(document).ready(function(){
     $('[data-toggle-dialog]').on('click', toggleDialog)
+    $('html').on('keydown', function(evt) {
+        if (evt.keyCode === 123) { // F12
+            // Open devTools
+            if (win.isDevToolsOpen()) {
+                win.closeDevTools()
+            } else {
+                win.showDevTools()
+            }
+        }
+    })
 });
