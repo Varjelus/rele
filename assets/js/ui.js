@@ -93,12 +93,7 @@ function drawTab(template, channel) {
     }
     if (channel.name !== '_') {
         $(tab).append($('<span>').addClass('octicon octicon-x close-channel').on('click', function() {
-            channel.part('Leaving', function(newChannel) {
-                // HACK:
-                setTimeout(function () {
-                    rele.setCurrentChannel(newChannel)
-                }, 0)
-            })
+            channel.part(null, function() {})
             rele.setCurrentChannel(rele.getCurrentNetwork().systemChannel())
         }))
     }
@@ -117,9 +112,9 @@ function redrawLog(data) {
                 $('.input-send').val($('.input-send').val() + $(this).text())
             })
 
-            message.message = makeSafe(message.message) // Replaces &<>'" with entities
-            message.message = linkify(message.message)  // Links r links
-            var p = $('<p>').addClass(message.type).html(message.message)
+            var p = $('<p>').addClass(message.type).text(message.message)
+            $(p).linkify()
+
             $(p).find('a').each(function() {
                 $(this).attr('data-external-resource', $(this).attr('href'))
                 $(this).attr('href', '#')
@@ -274,7 +269,7 @@ function activity(data) {
 }
 
 function shouldHighlight(data) {
-    return (data.message.toLowerCase().indexOf(data.network.client.nick.toLowerCase()) > -1)
+    return (data.message && data.message.toLowerCase().indexOf(data.network.client.nick.toLowerCase()) > -1)
 }
 
 // Event listeners
