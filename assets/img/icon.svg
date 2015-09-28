@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_9" height="64" width="64" y="0" x="0" stroke-linecap="null" stroke-width="0" stroke="#000000" fill="#000000"/>
+  <circle stroke="#000000" id="svg_1" r="10" cy="46" cx="25" stroke-linecap="null" stroke-width="0" fill="#ffffff"/>
+  <rect transform="rotate(35 39.49999999999999,29.999999999999996) " ry="3" rx="3" stroke="#000000" id="svg_8" height="30" width="5" y="15" x="37" stroke-linecap="null" stroke-width="0" fill="#ffffff"/>
+  <circle id="svg_2" stroke="#000000" r="10" cy="18" cx="25" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#ffffff"/>
+  <circle id="svg_10" r="6" cy="46" cx="25" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000"/>
+  <circle id="svg_11" r="0.190676" cy="49.261509" cx="27.429113" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000"/>
+  <circle id="svg_12" r="0.095338" cy="51.835634" cx="8.456857" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000"/>
+  <circle id="svg_13" r="6" cy="18" cx="25" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000"/>
+ </g>
+</svg>

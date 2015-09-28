@@ -1,0 +1,16 @@
+<input type="text" name="handle" placeholder="john123">
+<input type="text" name="real-name" placeholder="John Smith">
+
+<div class="form-actions">
+    <button type="button" class="btn btn-primary" onclick="changeWhois();toggleDialog()"><span class="octicon octicon-check"></span></button>
+    <button type="button" class="btn" onclick="toggleDialog()"><span class="octicon octicon-x"></span></button>
+</div>
+
+<script>
+$('dialog input[name="handle"]').val(rele.getCurrentNetwork().client.nick)
+function changeWhois() {
+    var handle = $('dialog input[name="handle"]').val()
+    var realName = $('dialog input[name="real-name"]').val()
+    rele.getCurrentNetwork().client.send('NICK', handle)
+}
+</script>

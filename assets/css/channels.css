@@ -1,0 +1,103 @@
+.tabnav {
+    margin-bottom: 0px;
+    height: 2.4rem;
+}
+
+.input-send {
+    position: absolute;
+    bottom: 4px;
+}
+
+.css-truncate-tab {
+    max-width: 150px !important;
+}
+
+.timestamp {
+    width: 2rem;
+    display: inline-block;
+    color: #EA8;
+    margin-right: 0.5rem;
+}
+.timestamp:hover {
+    color: #A64;
+}
+
+.name {
+    display: inline-block;
+    width: calc(20% - 0.25rem - 2rem);
+    max-width: 6rem;
+    text-align: right;
+    vertical-align: top;
+    color: #aaa;
+    max-height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 0.25rem;
+}
+.name:hover {
+    color: #555;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.name + p {
+    position: relative;
+    display: inline-block;
+    width: calc(100% - 20% - 1px - 0.5rem);
+    margin: 0;
+    border-left: 1px solid #ddd;
+    padding-left: 0.5rem;
+}
+
+.close-channel {
+    cursor: pointer;
+    color: #777;
+    font-size: 0.75rem;
+    margin-left: 0.75rem;
+}
+.close-channel:hover {
+    color: #111;
+}
+
+.channels-column {
+    width: calc(100% - 8.5rem);
+}
+
+.channel-columns {
+    height: calc(100% - 2.4rem);
+}
+
+.log-column, .users-column {
+    height: calc(100% - 30px);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-color: #ddd;
+    border-style: solid;
+    overflow-y: scroll;
+}
+
+.users-column {
+    border-width: 0 1px 1px 1px;
+    width: 10rem;
+}
+
+.log-column {
+    border-width: 0 0 1px 1px;
+    width: calc(100% - 10rem);
+    background-color: #fff;
+}
+.log-column p.error {
+    color: red;
+}
+.log-column p.notice {
+    color: purple;
+}
+.log-column p.join {
+    color: green;
+}
+.log-column p.part {
+    color: yellow;
+}
+.log-column p.quit {
+    color: blue;
+}

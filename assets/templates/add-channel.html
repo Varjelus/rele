@@ -1,0 +1,22 @@
+<input type="text" name="channel-name" placeholder="#foobar">
+<input type="password" name="channel-pass" placeholder="********">
+
+<div class="form-actions">
+    <button type="button" class="btn btn-primary" onclick="joinChannel();toggleDialog()"><span class="octicon octicon-sign-in"></span></button>
+    <button type="button" class="btn" onclick="toggleDialog()"><span class="octicon octicon-x"></span></button>
+</div>
+
+<script>
+function joinChannel() {
+    var chanName = $('input[name="channel-name"]').val()
+    var pass = $('input[name="channel-pass"]').val()
+    var joinName
+    if (pass) {
+        chanName += ' ' + pass
+    }
+    var chan = new rele.Channel(rele.getCurrentNetwork(), chanName)
+    chan.join(function() {
+        redrawChannels({network: rele.getCurrentNetwork(), channels: rele.getCurrentNetwork().channels})
+    })
+}
+</script>

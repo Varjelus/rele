@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<!--<link rel="icon" type="image/png" href="assets/img/favicon.ico">-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+	<title>Rele</title>
+
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/dialog.css">
+	<link rel="stylesheet" href="assets/css/networks.css">
+	<link rel="stylesheet" href="assets/css/channels.css">
+
+	<script src="assets/js/jquery-1.10.2.js"></script>
+	<script src="assets/js/utilities.js"></script>
+	<script src="assets/js/ui.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="columns">
+			<div class="column networks-column">
+				<nav class="menu css-truncate" id="network-list">
+					<span class="menu-heading" id="networks-header"><span class="octicon octicon-radio-tower"></span></span>
+					<!-- Reference item
+						<a class="menu-item css-truncate-network selected" href="#">Freenode</a> -->
+				</nav>
+				<a class="btn btn-sm btn-block" href="#" data-toggle-dialog="add-network"><span class="octicon octicon-plus"></span></a>
+			</div>
+			<div class="column channels-column">
+				<!-- assets/templates/network.html -->
+			</div>
+		</div>
+	</div>
+	<dialog></dialog>
+	<audio data-sound-highlight src="assets/sound/highlight.wav" muted hidden>
+</html>

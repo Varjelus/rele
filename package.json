@@ -1,0 +1,17 @@
+{
+	"name": "Rele",
+	"main": "index.html",
+	"description": "Simple IRC client",
+	"version": "1.0.0",
+	 "window": {
+		"title": "Rele",
+		"icon": "assets/img/icon.png",
+		"toolbar": false,
+		"frame": true,
+		"width": 800,
+		"height": 500,
+		"position": "mouse",
+		"min_width": 700,
+		"min_height": 300
+	}
+}

@@ -1,0 +1,22 @@
+dialog {
+    position: absolute;
+    min-width: 20rem;
+    max-width: 30%;
+    top: 20%;
+    border: 2px ridge gray;
+    box-shadow: 10px 10px 5px #888888;
+}
+dialog .input-group {
+    margin-bottom: 2px;
+}
+dialog .input-group-button .btn {
+    width: 3rem;
+}
+
+label span.octicon {
+    font-size: 1.5rem;
+    margin-left: 0.9rem;
+}
+ label input:checked + span  {
+    color: #FF5900;
+}

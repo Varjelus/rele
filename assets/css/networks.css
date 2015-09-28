@@ -1,0 +1,16 @@
+.menu-heading {
+    text-align: center;
+}
+
+nav.menu {
+    height: calc(100% - 30px);
+    margin-bottom: 0;
+}
+
+.networks-column {
+    width: 8.5rem;
+}
+
+.css-truncate-network {
+    max-width: 100% !important;
+}

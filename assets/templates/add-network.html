@@ -1,0 +1,74 @@
+<div class="input-group">
+    <span class="input-group-button">
+        <button class="btn" onclick="dialogSelectFile(pickServer)">
+            <span class="octicon octicon-database"></span>
+        </button>
+    </span>
+    <input type="text" name="host" placeholder="irc.example.com:6664" value="irc.dollyfish.net.nz">
+</div>
+
+<div class="input-group">
+    <span class="input-group-button">
+        <button class="btn" onclick="dialogSelectFile(pickHandle)">
+            <span class="octicon octicon-gist-secret"></span>
+        </button>
+    </span>
+    <input type="text" name="handle" placeholder="john123">
+</div>
+
+<div class="input-group">
+    <span class="input-group-button">
+        <button class="btn" onclick="dialogSelectFile(pickPersona)">
+            <span class="octicon octicon-person"></span>
+        </button>
+    </span>
+    <input type="text" name="real-name" placeholder="John Smith">
+</div>
+
+<div class="form-actions">
+    <button type="button" class="btn btn-primary" onclick="joinNetwork();toggleDialog()"><span class="octicon octicon-sign-in"></span></button>
+    <button type="button" class="btn" onclick="toggleDialog()"><span class="octicon octicon-x"></span></button>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('input[name="handle"]').val(process.env.USERNAME || process.env.LOGNAME || process.env.USER)
+    $('input[name="real-name"]').val(process.env.USERNAME || process.env.LOGNAME || process.env.USER)
+});
+
+function dialogSelectFile(callback) {
+    $('<input>').attr('type', 'file').click().on('change', callback)
+}
+function pickServer() {
+    fs.readFile($(this).val(), 'utf-8', function(err, data) {
+        if (err) throw err
+        try {
+            var info = JSON.parse(data)
+            if ('server' in info)
+                $('input[name="host"]').val(info.server)
+            // autojoins?
+        } catch(err) {
+            throw err
+        }
+    })
+}
+function pickPersona() {
+    fs.readFile($(this).val(), 'utf-8', function(err, data) {
+        if (err) throw err
+        $('input[name="real-name"]').val(data)
+    })
+}
+function pickHandle() {
+    fs.readFile($(this).val(), 'utf-8', function(err, data) {
+        if (err) throw err
+        $('input[name="handle"]').val(data)
+    })
+}
+
+function joinNetwork() {
+    new rele.Network($('input[name="host"]').val(), $('input[name="handle"]').val(), {
+        realName: $('dialog input[name="real-name"]').val(),
+        userName: process.env.COMPUTERNAME || process.env.USERNAME || process.env.LOGNAME || process.env.USER || 'rele'
+    })
+}
+</script>
